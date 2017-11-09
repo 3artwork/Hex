@@ -1,0 +1,77 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.hex {
+	stroke-width:2px;
+	stroke:black;
+}
+.background {
+	fill: #212121;
+}
+.map {
+	width: 50%;
+}
+.controls {
+	width: 50%;
+}
+.controls div {
+	display: inline-block;
+	width: 10%;
+}
+.controls g:hover polygon, .controls g:hover path {
+	stroke:white;
+}
+polygon {
+	cursor: pointer;
+}
+.blue {
+	fill: #00A2E8;
+}
+.darkgreen {
+	fill: #106018;
+}
+.yellow {
+	fill: #9da076;
+}
+.gray {
+	fill: #636363;
+}
+.white {
+	fill: #dbdbdb;
+}
+.red {
+	fill: #662f2f;
+}
+.left {
+	fill: rgba(0, 0, 0, 0.1);
+}
+.center {
+	fill: rgba(0, 0, 0, 0.3);
+}
+.right {
+	fill: rgba(0, 0, 0, 0.5);
+}
+.fill {
+	fill: inherit;
+}
+.border {
+	fill: rgba(0, 0, 0, 0.5);
+}
+path, polygon {
+	opacity: 1;
+}
+text {
+	fill: white;
+}
+.controls h1 {
+	cursor: pointer;
+	-webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}

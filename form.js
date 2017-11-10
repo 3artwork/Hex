@@ -1,13 +1,16 @@
 function setHeight(target, parent, height) {
-	var item = getFromMap(map, target);
+	var item = getFromMap(engine.map, target);
 	item.height = item.height + height;
 	if(item.height < 0)
 		item.height = 0;
 	placeInMap(engine.map, target, item);
-	var coords = hexToCoords(item.hex);
+	target.x -= engine.currentPosition.x;
+	target.y -= engine.currentPosition.y;
+	target.z -= engine.currentPosition.z;
+	var coords = hexToCoords(target);
 	coords.z = item.height;
 	var parser = new DOMParser();
-	parent[0].outerHTML = drawHex(defaultViewBox, coords, (engine.colors[item.color]), item.clickEvent);
+	parent[0].outerHTML = drawHex(engine.defaultViewBox, coords, (engine.colors[item.color]), false, ('engine.currentOperation('+JSON.stringify(item.hex)+', $(this).parent())'));
 }
 function setColor(target, parent, colorIndex) {
 	var item = getFromMap(engine.map, target);

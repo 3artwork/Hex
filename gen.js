@@ -90,6 +90,7 @@ function expand(radius) {
 	}
 	return engine.map;
 }
+
 function preloadMap() {
 	var preloadedMap = new Map(JSON.parse(localStorage.getItem('preloaded')));
 	var max = { x:-Infinity, y:-Infinity, z:-Infinity };
@@ -113,6 +114,7 @@ function preloadMap() {
 	});
 	return adjustedMap;
 }
+
 function saveMap() {
 	localStorage.setItem('preloaded', JSON.stringify([...engine.map]));
 }
@@ -122,7 +124,7 @@ function rearrangeRange(radius, origin) {
 	var hexGrid = [];
 	targets.forEach(function(value) {
 		var key = hexToCoords(value.hex);
-		hexGrid.push({dimensions:{x:key.x, y:key.y, z:value.height, format:"coord"}, border:value.border, color:engine.colors[value.color], clickEvent:value.clickEvent, ignoreTransform:value.ignoreTransform});
+		hexGrid.push({dimensions:{x:key.x, y:key.y, z:value.height, format:"coord"}, border:value.border, color:engine.colors[value.color], clickEvent:('engine.currentOperation('+JSON.stringify(value.hex)+', $(this).parent())'), ignoreTransform:value.ignoreTransform});
 	});
 	return hexGrid;
 }

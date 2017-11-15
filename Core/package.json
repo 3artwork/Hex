@@ -1,0 +1,14 @@
+{
+  "name": "Hex",
+  "version": "1.0.0",
+  "description": "Hex grid map generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "test hex"
+  },
+  "author": "3artwork",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}

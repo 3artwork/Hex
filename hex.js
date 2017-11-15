@@ -1,12 +1,3 @@
-var vectors = [
-	{x: 1, y: -1, z: 0},
-	{x: 1, y: 0, z: -1},
-	{x: 0, y: 1, z: -1},
-	{x: -1, y: 1, z: 0},
-	{x: -1, y: 0, z: 1},
-	{x: 0, y: -1, z: 1}
-]
-
 function newPosition(origin, vector, velocity) {
 	return { x:(origin.x + vector.x) * velocity, y:(origin.y + vector.y) * velocity, z:(origin.z + vector.z) * velocity, format:"hex"};
 }
@@ -59,6 +50,7 @@ function getZPath(coords, points, position) {
 			' L ' + points[1].x + ' ' + points[1].y + ' z"/>';
 	return path;
 }
+
 function drawHex(viewBox, coords, color, border, clickEvent){
 	var xoff = Math.floor(viewBox.x / 2 + (coords.x * 3 / 4 * engine.baseHex.radius)) - engine.baseHex.radius / 2;
 	var off = (coords.x & 1) / 2;

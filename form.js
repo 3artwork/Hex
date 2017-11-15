@@ -12,6 +12,7 @@ function setHeight(target, parent, height) {
 	var parser = new DOMParser();
 	parent[0].outerHTML = drawHex(engine.defaultViewBox, coords, (engine.colors[item.color]), false, ('engine.currentOperation('+JSON.stringify(item.hex)+', $(this).parent())'));
 }
+
 function setColor(target, parent, colorIndex) {
 	var item = getFromMap(engine.map, target);
 	item.color = colorIndex;
